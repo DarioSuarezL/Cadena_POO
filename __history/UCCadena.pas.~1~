@@ -106,18 +106,18 @@ var pal,acum,pal2:string; i,i2,c:integer;
 begin
 c:=1; i2:=1; pal:='';  acum:=''; i:=1;
   while c<=cantpal do begin
-  pal:=nword(c);
+  pal:=nword(c);                          //
     repeat
     if pal<>numlit[i] then inc(i);
     until (pal=Numlit[i]) or (i>=60);
     if pal=numlit[i] then begin
 
-    if (i>=30) and (nword(c+1)='y') then begin
+    if (i>30) and (nword(c+1)='y') then begin
     pal2:=nword(c+2);
       repeat
         if pal2<>numlit[i2] then begin
           i2:=i2+1;
-        end;                            // cinco y cincuenta y cuatro =05:05:
+        end;                            // cincon y cincuenta y cuatro =05:05:
       until (pal2=Numlit[i2]) or (i2>=60);
       i:=i2+i;
       c:=c+2;
